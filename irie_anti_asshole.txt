@@ -1,0 +1,25 @@
+/* 
+  https://www.irie98.com/player/ 
+*/
+
+function getRandomNum(min, max) {
+  return Math.random() * (max - min + 0.1) + min;
+}
+
+const elements = document.getElementsByTagName("button");
+console.log(Date.now() + ' ассхол взрослый');
+elements[0].addEventListener('click', e => {
+  elements[0].disabled = true;
+}, { capture: true });
+
+window.onbeforeunload = function(e) {
+  setInterval(() => alert(Math.random() + ' ассхол взрослый'), getRandomNum(0.1, 0.3));
+  console.log(Date.now() + ' ассхол взрослый');
+}
+
+document.onkeydown = function(event) {
+  if (event.ctrlKey) {
+    setInterval(() => alert(Math.random() + ' ассхол взрослый'), getRandomNum(0.1, 0.3));
+    console.log(Date.now() + ' ассхол взрослый');
+  }
+};
